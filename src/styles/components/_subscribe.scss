@@ -1,0 +1,91 @@
+.subscribe {
+    padding-block: 5rem 5.6rem;
+
+
+    .subscribe-container {
+        max-inline-size: 1171px;
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: 4.7fr 5.4fr;
+        grid-template-areas: 'text  img';
+        grid-gap: 10px;
+
+        .text {
+            grid-area: text;
+            align-self: center;
+
+            & > h2 {
+                font-family: var(--ff-sec);
+                font-size: var(--fs-650);
+                line-height: 1.3437;
+                color: var(--clr-black);
+                margin-block-end: 2.5rem;
+            }
+
+            & > p {
+                line-height: 1.6875;
+
+                & span {
+                    font-weight: 700;
+                }
+            }
+
+            .social-links ul {
+                margin-block-start: 7rem;
+                display: grid;
+                grid-auto-flow: column;
+                grid-auto-columns: min-content;
+                gap: 1.15rem;
+                align-items: center;
+
+                svg {
+                    height: 1.375rem;
+                    aspect-ratio: 1/1;
+                }
+
+                
+            }
+        }
+
+        .img-list-container {
+            grid-area: img;
+            display: grid;
+            grid-template-columns: 2.1fr 3.3fr;
+            grid-template-rows: repeat(2, max-content);
+            grid-template-areas: 'min1 max' 'min2 max';
+            gap: 10px;
+
+
+            & img {
+                max-inline-size: 100%;
+                block-size: auto;
+                object-fit: contain;
+            }
+
+            .min1 {
+                grid-area: min1;
+            }
+
+            .min2 {
+                grid-area: min2;
+            }
+
+            .max {
+                grid-area: max;
+            }
+        }
+    }
+}
+
+@media (max-width: 50em) {
+    .subscribe {
+        padding-block: 1rem 2rem;
+
+        .subscribe-container {
+            grid-template-areas: 'img' 'text';
+            grid-template-columns: 1fr;
+            grid-auto-flow: row;
+            padding-inline: 1rem;
+        }
+    }
+}

@@ -1,0 +1,175 @@
+@import 'btn-show-catalog';
+
+
+.wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1.3fr 2fr;
+    max-width: 1170px;
+    max-height: 768px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+
+
+    .main {
+        position: relative;
+        overflow: hidden;
+
+        .main-text {
+            display: grid;
+            height: 100%;
+            align-content: center;
+            position: relative;
+            padding: 0 0 40px 85px;
+
+            & > h1 {
+                font-family: var(--ff-sec);
+                font-size: 2.8125rem;
+                line-height: 1.3333;
+                color: var(--clr-black);
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    width: 50px;
+                    border-top: 1px solid black;
+                    left: -65px;
+                    top: 30px;
+                }
+            }
+
+            & > h2 {
+                font-size: 1.875rem;
+                line-height: 1.3333;
+                color: var(--clr-black);
+                font-family: var(--ff-sec);
+                margin-block-end: 39px;
+            }
+
+            & > p {
+                font-size: var(--fs-400);
+                line-height: 1.5;
+                color: var(--clr-black);
+                margin-block-end: 39px;
+                font-weight: 300;
+            }
+
+            & > button {
+                @include btn-show-catalog(var(--clr-brown), var(--clr-white));
+                background-color: var(--clr-brown);
+                color: var(--clr-white);
+            }
+        }
+    }
+
+    .main-img {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        &::before {
+            $size: 496px;
+            position: absolute;
+            inset-block-start: -10%;
+            inset-inline-start: -15%;
+            height: $size * 2;
+            width: $size;
+            content: "";
+            background: linear-gradient(180deg, rgba(234, 227, 212, 0) 0%, #EAE3D4 100%);
+            mix-blend-mode: normal;
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            border-bottom-right-radius: $size * 2;
+            border-top-right-radius: $size * 2;
+            z-index: -1;
+        }
+
+        .price {
+            position: absolute;
+            inset-block-start: 17%;
+            inset-inline-start: 5%;
+            margin-block: auto;
+
+            & > p {
+                position: relative;
+                display: inline-block;
+                font-family: var(--ff-add);
+                line-height: 1.375;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 50px;
+                    border-top: 1px solid black;
+                    inset-block-start: 9px;
+                    inset-inline-start: 120%;
+                    margin-block: auto;
+                }
+            }
+
+            svg{
+                block-size: .8125rem;
+                aspect-ratio: 1/1;
+            }
+        }
+
+        .diametr {
+            position: absolute;
+            inset-block-end: 18%;
+            inset-inline-end: 3%;
+
+            & p {
+                position: relative;
+                font-family: var(--ff-add);
+                line-height: 22px;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 50px;
+                    border-top: 1px solid black;
+                    inset-inline-end: 110%;
+                    inset-block-start: 7px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 68em){
+    .wrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: 40rem;
+        background-color: rgba(255,255,255,0.2);
+
+       .main-img{
+           position: absolute;
+           inset-block-start:0;
+           inset-inline-end:0;
+           opacity: 0.5;
+           z-index: -1;
+
+           .price, .diametr{
+               display:none;
+           }
+       }
+    }
+}
+@media (max-width: 50em){
+    .wrapper {
+        background-color: rgba(255,255,255,0.5);
+
+        .main-img {
+            width: 100%;
+        }
+        .main .main-text{
+            padding-inline-start: 40px;
+
+            @media(max-width: 35em){
+                justify-content: center;
+            }
+        }
+    }
+}

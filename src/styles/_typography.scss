@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+$fonts: ( main: ('Roboto', sans-serif), sec: ('Playfair Display', serif), add: ('Prata', serif) );
+
+$fontsizes: ( 300: 0.75rem, 400: 0.875rem, 500: 1rem, 525: 1.125rem, 550: 1.3125rem, 600: 1.5rem,650:2rem, 700: 2.25rem, 800: 3rem, );
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    
+    a{
+        text-decoration: none;
+    }
+}
